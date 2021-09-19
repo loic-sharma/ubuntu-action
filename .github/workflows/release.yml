@@ -14,6 +14,7 @@ on:
 
 env:
   Version: ${{ github.event.inputs.releaseVersion }}
+  PackageVersion: ${{ github.event.inputs.releaseVersion }}
 
 jobs:
   verify:
