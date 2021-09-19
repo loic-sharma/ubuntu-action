@@ -6,11 +6,11 @@ on:
       releaseVersion:
         description: 'Release version'
         required: true
-        default: '1.0.0-preview1'
+        default: '8.0.0'
       packageSource:
         description: 'Package source'
         required: true
-        default: 'https://api.nuget.org/v3/index.json'
+        default: 'https://apidev.nugettest.org/v3/index.json'
 
 env:
   PackageVersion: ${{ github.event.inputs.releaseVersion }}
@@ -94,5 +94,5 @@ jobs:
         context: .
         push: true
         tags: |
-          loicsharma/baget:latest
-          loicsharma/baget:${{ github.event.inputs.releaseVersion }}
+          loicsharma/baget-test:latest
+          loicsharma/baget-test:${{ github.event.inputs.releaseVersion }}
