@@ -43,20 +43,11 @@ jobs:
         dotnet-version: 3.1.x
     - name: Publish
       run: dotnet publish src/BaGet --configuration Release --output artifacts
-    # - name: Archive Release
-    #   uses: thedoctor0/zip-release@master
-    #   with:
-    #     type: 'zip'
-    #     filename: 'BaGet.zip'
-    #     path: 'artifacts'
-    - name: Upload BaGet
+    - name: Upload
       uses: actions/upload-artifact@v2
       with:
         name: BaGet
         path: artifacts
-
-    # TODO: https://github.com/marketplace/actions/zip-release
-    # output: BaGet.zip
 
   release_packages:
     needs: verify
